@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Development — Parazit: Dead Shells</title>
+    <meta name="description" content="How Parazit: Dead Shells is built — production figures, verification tooling and one developer's working method.">
+    <meta name="theme-color" content="#07090A">
+    <link rel="canonical" href="https://yenidunyaworks.com/en/development.html">
+    <link rel="alternate" hreflang="tr" href="https://yenidunyaworks.com/gelistirme.html">
+    <link rel="alternate" hreflang="en" href="https://yenidunyaworks.com/en/development.html">
+    <link rel="icon" href="../gorsel/favicon-32.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="../gorsel/apple-touch-icon.png">
+    <link rel="stylesheet" href="../style.css">
+  </head>
+  <body>
+
+    <header class="site-header">
+      <div class="header-ic">
+        <a class="marka" href="index.html" aria-label="Parazit: Dead Shells — home">
+          <img src="../gorsel/amblem.png" alt="" width="30" height="30">
+          <span>Parazit</span>
+        </a>
+        <nav aria-label="Sections">
+          <a href="index.html#game">Game</a>
+          <a href="index.html#ingame">In-game</a>
+          <a href="#figures">Figures</a>
+          <a href="#verification">Verification</a>
+          <a href="index.html#contact">Contact</a>
+          <a class="dil" href="../gelistirme.html" hreflang="tr" lang="tr">TR</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+
+      <section class="bolum" aria-labelledby="top-heading">
+        <a class="geri" href="index.html">← Home</a>
+        <p class="ust-etiket">Development</p>
+        <h2 id="top-heading">A one-person production, measured as it goes</h2>
+        <p style="max-width:62ch">Parazit is built by a solo developer. The biggest risk in a project like this isn't writing code — it's <strong>losing track of what you've done</strong>: which asset is actually wired into the game, which fix quietly broke something else, whether a problem solved last month has crept back in.</p>
+        <p style="max-width:62ch">So the project has a measurement pipeline alongside the production one. None of the figures below are maintained by hand; each is the output of a command and can be reproduced on demand.</p>
+      </section>
+
+      <section class="bolum" id="figures" aria-labelledby="figures-heading">
+        <p class="ust-etiket">Production figures</p>
+        <h2 id="figures-heading">As of 18 September 2026</h2>
+        <div class="veri-izgara">
+          <div class="veri">
+            <p class="sayi"><em>76</em> days</p>
+            <p class="ad">Development time</p>
+            <p class="aciklama">First commit 5 July 2026. From a grey-box prototype to an Unreal Engine 5.8 production project.</p>
+          </div>
+          <div class="veri">
+            <p class="sayi"><em>7</em> levels</p>
+            <p class="ad">Playable maps</p>
+            <p class="aciklama">Laboratory, lower floor, security line, disposal shaft, smuggler corridor, waste valley, mining site.</p>
+          </div>
+          <div class="veri">
+            <p class="sayi"><em>1,072</em></p>
+            <p class="ad">Voice files</p>
+            <p class="aciklama">529 Turkish, 543 English. Dialogue is recorded in both languages.</p>
+          </div>
+          <div class="veri">
+            <p class="sayi"><em>11,500</em>+</p>
+            <p class="ad">Game assets</p>
+            <p class="aciklama">364 skeletal meshes, 2,969 props, 1,709 animation assets, plus materials.</p>
+          </div>
+          <div class="veri">
+            <p class="sayi"><em>143,209</em></p>
+            <p class="ad">Lines of gameplay code</p>
+            <p class="aciklama">C++ across 273 files. Possession, shell collapse, AI, alarm, elevators, interface.</p>
+          </div>
+          <div class="veri">
+            <p class="sayi"><em>2,536</em></p>
+            <p class="ad">Production tools</p>
+            <p class="aciklama">Permanent Python tooling for asset import, placement, auditing and measurement.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bolum" id="verification" aria-labelledby="verification-heading">
+        <p class="ust-etiket">Verification</p>
+        <h2 id="verification-heading">Measured before it counts as done</h2>
+        <p style="max-width:62ch">This project gave its most expensive class of bug a name: <strong>produced but never wired up.</strong> An asset gets created, saved to the right folder, ticked off on a list — and the game never reads it. No error, no warning, nothing visible anywhere.</p>
+        <ul class="liste">
+          <li><strong>Completion gate</strong> — before any task counts as finished, a checklist for that kind of work runs end to end; the automated half is measured by a single command that prints <em>passed</em> or <em>failed</em>.</li>
+          <li><strong>Regression tests</strong> — the game's rules are tested independently of the game, which catches silent drift between sessions.</li>
+          <li><strong>Automated player</strong> — a bot walks the map and logs behaviour; results are compared numerically rather than by eye.</li>
+          <li><strong>Performance measurement</strong> — frame time is measured in packaged builds, never in the editor. Verdicts use the worst 1%, not the average.</li>
+          <li><strong>Engineering memory</strong> — every solved class of trap is recorded with its case and its evidence; there are <strong>1,451</strong> entries today. The point is to never solve the same problem twice.</li>
+        </ul>
+      </section>
+
+      <section class="bolum" aria-labelledby="road-heading">
+        <p class="ust-etiket">What's next</p>
+        <h2 id="road-heading">Roadmap</h2>
+        <ul class="liste">
+          <li><strong>Demo polish</strong> — visual and audio acceptance across the seven levels, playtest rounds, balance work.</li>
+          <li><strong>Steam page</strong> — store page and trailer, ahead of the Next Fest registration deadline.</li>
+          <li><strong>Steam Next Fest</strong> — 22 February 2027, public playable demo.</li>
+          <li><strong>Full release</strong> — targeting June 2027.</li>
+        </ul>
+        <p class="not">These are targets, not commitments. The game won't enter the festival before the demo is ready — a title only gets one shot at Next Fest.</p>
+      </section>
+
+      <section class="bolum" aria-labelledby="ask-heading">
+        <h2 id="ask-heading">Questions?</h2>
+        <p>Happy to talk about the process, the technical approach, or working together.</p>
+        <div class="iletisim-satir">
+          <span class="studyo">YenidunyaWorks</span>
+          <a href="mailto:contact@yenidunyaworks.com">contact@yenidunyaworks.com</a>
+          <a href="https://x.com/parazitgame" rel="me noopener">X / @parazitgame</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <span>© 2026 YenidunyaWorks</span>
+      <span>Figures measured 18 September 2026</span>
+    </footer>
+
+  </body>
+</html>

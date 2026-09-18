@@ -74,6 +74,11 @@ p { margin: 0 0 1rem; }
 }
 nav { display: flex; gap: 1.35rem; flex-wrap: wrap; font-size: .9rem; letter-spacing: .06em; }
 nav a { color: var(--soluk); text-transform: uppercase; }
+nav a.dil {
+  border: 1px solid rgba(62,79,80,.85); border-radius: 4px;
+  padding: .12rem .5rem; letter-spacing: .12em; font-weight: 600;
+}
+nav a.dil:hover, nav a.dil:focus-visible { border-color: var(--mor); color: var(--mor); }
 
 /* ---------- ortak bölüm ---------- */
 .bolum { width: var(--olcu); margin-inline: auto; padding: 4.5rem 0; }
