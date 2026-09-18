@@ -156,6 +156,14 @@ nav a.dil:hover, nav a.dil:focus-visible { border-color: var(--mor); color: var(
   border-left: 2px solid var(--mor-dunya); padding-left: .9rem;
 }
 
+.hikaye p { max-width: 64ch; font-size: 1.04rem; }
+.hikaye b { color: #E6E9E4; font-weight: 600; }
+.hikaye-kapanis {
+  margin-top: 1.6rem; padding-left: 1.1rem;
+  border-left: 2px solid var(--mor);
+  color: #D5D9D2; font-size: 1.06rem;
+}
+
 /* ---------- oyun içi şerit ----------
    ⚠️ Kareler KIRPILMAZ: kaynak oranları 1.07 ile 2.06 arasında değişiyor ve
    sabit orana zorlamak radial menünün halkasını kesiyordu. Her kare kendi
