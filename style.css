@@ -56,17 +56,15 @@ p { margin: 0 0 1rem; }
 /* ---------- başlık şeridi ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
+  background: rgba(7,9,10,.82);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(62,79,80,.45);
+}
+.header-ic {
   display: flex; align-items: center; justify-content: space-between;
   gap: 1.5rem; flex-wrap: wrap;
   width: var(--olcu); margin-inline: auto;
   padding: .85rem 0;
-}
-.site-header::before {
-  content: ""; position: absolute; inset: 0; z-index: -1;
-  background: rgba(7,9,10,.82);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(62,79,80,.45);
-  width: 100vw; left: 50%; transform: translateX(-50%);
 }
 .marka { display: flex; align-items: center; gap: .6rem; }
 .marka img { width: 30px; height: 30px; }
@@ -217,7 +215,7 @@ footer {
   .hero-alt { margin-top: -3rem; }
   .diller, .kartlar, .durum-izgara, .veri-izgara { grid-template-columns: 1fr; }
   nav { gap: .9rem; font-size: .82rem; }
-  .site-header { padding: .7rem 0; }
+  .header-ic { padding: .7rem 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
