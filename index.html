@@ -29,6 +29,7 @@
           <span>Parazit</span>
         </a>
         <nav aria-label="Sayfa bölümleri">
+          <a href="#video">Oynanış</a>
           <a href="#oyun">Oyun</a>
           <a href="#nasil">Nasıl oynanıyor</a>
           <a href="#hikaye">Hikâye</a>
@@ -59,6 +60,19 @@
             <span class="rozet">Türkçe &amp; İngilizce</span>
             <span class="rozet">Yapım aşamasında</span>
           </div>
+        </div>
+      </section>
+
+      <section class="bolum video-bolum" id="video" aria-labelledby="video-baslik">
+        <p class="ust-etiket">Oynanış</p>
+        <h2 id="video-baslik">Ekranda neye benziyor</h2>
+        <div class="video-kutu" role="button" tabindex="0" data-baslik="Parazit: Ölü Kabuklar — oynanış videosu">
+          <img src="gorsel/video-poster.jpg" alt="Parazit: Ölü Kabuklar oynanış videosundan bir kare" width="1280" height="720" loading="lazy">
+          <span class="video-oynat">
+            <span class="daire" aria-hidden="true"></span>
+            <span class="etiket">Oynanışı izle</span>
+            <span class="sure">1 dk 20 sn · sesli</span>
+          </span>
         </div>
       </section>
 
@@ -195,5 +209,21 @@
       <span>Parazit: Ölü Kabuklar · Parazit: Dead Shells</span>
     </footer>
 
+
+    <script>
+      document.querySelectorAll('.video-kutu').forEach(function (kutu) {
+        kutu.addEventListener('click', function () {
+          if (kutu.dataset.acildi) return;
+          kutu.dataset.acildi = '1';
+          var f = document.createElement('iframe');
+          f.src = 'https://www.youtube-nocookie.com/embed/8a3GGomhX2M?autoplay=1&rel=0';
+          f.title = kutu.dataset.baslik || 'Gameplay';
+          f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture; web-share';
+          f.setAttribute('allowfullscreen', '');
+          kutu.innerHTML = '';
+          kutu.appendChild(f);
+        });
+      });
+    </script>
   </body>
 </html>

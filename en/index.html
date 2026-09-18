@@ -29,6 +29,7 @@
           <span>Parazit</span>
         </a>
         <nav aria-label="Sections">
+          <a href="#video">Gameplay</a>
           <a href="#game">Game</a>
           <a href="#how">How it plays</a>
           <a href="#story">Story</a>
@@ -59,6 +60,19 @@
             <span class="rozet">English &amp; Turkish</span>
             <span class="rozet">In development</span>
           </div>
+        </div>
+      </section>
+
+      <section class="bolum video-bolum" id="video" aria-labelledby="video-heading">
+        <p class="ust-etiket">Gameplay</p>
+        <h2 id="video-heading">What it looks like</h2>
+        <div class="video-kutu" role="button" tabindex="0" data-baslik="Parazit: Dead Shells — gameplay video">
+          <img src="../gorsel/video-poster.jpg" alt="A frame from the Parazit: Dead Shells gameplay video" width="1280" height="720" loading="lazy">
+          <span class="video-oynat">
+            <span class="daire" aria-hidden="true"></span>
+            <span class="etiket">Watch gameplay</span>
+            <span class="sure">1 min 20 sec · with sound</span>
+          </span>
         </div>
       </section>
 
@@ -195,5 +209,21 @@
       <span>Parazit: Dead Shells · Parazit: Ölü Kabuklar</span>
     </footer>
 
+
+    <script>
+      document.querySelectorAll('.video-kutu').forEach(function (kutu) {
+        kutu.addEventListener('click', function () {
+          if (kutu.dataset.acildi) return;
+          kutu.dataset.acildi = '1';
+          var f = document.createElement('iframe');
+          f.src = 'https://www.youtube-nocookie.com/embed/8a3GGomhX2M?autoplay=1&rel=0';
+          f.title = kutu.dataset.baslik || 'Gameplay';
+          f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture; web-share';
+          f.setAttribute('allowfullscreen', '');
+          kutu.innerHTML = '';
+          kutu.appendChild(f);
+        });
+      });
+    </script>
   </body>
 </html>
