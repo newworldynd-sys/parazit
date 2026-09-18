@@ -211,8 +211,13 @@ footer {
 @media (max-width: 40rem) {
   body { font-size: 16px; }
   .bolum { padding: 3rem 0; }
-  .hero-gorsel img { max-height: 58vh; }
-  .hero-alt { margin-top: -3rem; }
+  /* mobilde hero metni görselin ÜSTÜNE BİNMEZ: görsel kısa olduğu için
+     negatif margin metni kadrajın ortasına sokuyor ve wordmark'ı örtüyordu */
+  .hero-gorsel img { max-height: 42vh; object-position: 72% center; }
+  .hero-alt { margin-top: 0; padding-top: 1.75rem; }
+  .hero-gorsel::after {
+    background: linear-gradient(180deg, rgba(7,9,10,.2) 0%, rgba(7,9,10,0) 45%, rgba(7,9,10,1) 100%);
+  }
   .diller, .kartlar, .durum-izgara, .veri-izgara { grid-template-columns: 1fr; }
   nav { gap: .9rem; font-size: .82rem; }
   .header-ic { padding: .7rem 0; }
