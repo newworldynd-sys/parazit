@@ -120,6 +120,12 @@ nav a.dil:hover, nav a.dil:focus-visible { border-color: var(--mor); color: var(
 
 /* ---------- video (facade: tıklanana kadar YouTube'a istek YOK) ---------- */
 .video-bolum { padding-top: 0; }
+.video-altbilgi {
+  margin-top: .85rem; font-size: .82rem; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--soluk);
+}
+.video-altbilgi b { color: var(--mor); font-weight: 600; }
+
 .video-kutu {
   position: relative; width: 100%; aspect-ratio: 16 / 9;
   border: 1px solid rgba(62,79,80,.7); border-radius: 10px;
