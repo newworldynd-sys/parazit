@@ -157,6 +157,10 @@ nav a.dil:hover, nav a.dil:focus-visible { border-color: var(--mor); color: var(
 }
 
 .hikaye p { max-width: 64ch; font-size: 1.04rem; }
+.hikaye-acilis {
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem); font-weight: 650;
+  color: #F2F4F0; line-height: 1.35; margin-bottom: 1.4rem; max-width: 30ch;
+}
 .hikaye b { color: #E6E9E4; font-weight: 600; }
 .hikaye-kapanis {
   margin-top: 1.6rem; padding-left: 1.1rem;
