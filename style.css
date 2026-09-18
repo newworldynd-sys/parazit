@@ -151,6 +151,27 @@ nav a { color: var(--soluk); text-transform: uppercase; }
   border-left: 2px solid var(--mor-dunya); padding-left: .9rem;
 }
 
+/* ---------- oyun içi şerit ----------
+   ⚠️ Kareler KIRPILMAZ: kaynak oranları 1.07 ile 2.06 arasında değişiyor ve
+   sabit orana zorlamak radial menünün halkasını kesiyordu. Her kare kendi
+   oranında durur; ızgara `align-items: start` ile üstten hizalar. */
+.oyun-izgara {
+  display: grid; grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 1rem; margin-top: 2rem; align-items: start;
+}
+.oyun-kare {
+  margin: 0; border-radius: 8px; overflow: hidden;
+  border: 1px solid rgba(62,79,80,.6); background: var(--zemin-2);
+  position: relative;
+}
+.oyun-kare img { width: 100%; height: auto; display: block; transition: transform .5s ease; }
+.oyun-kare:hover img { transform: scale(1.02); }
+.oyun-kare figcaption {
+  padding: .7rem .9rem; font-size: .86rem; color: var(--soluk);
+  border-top: 1px solid rgba(62,79,80,.4); background: rgba(7,9,10,.6);
+}
+.oyun-kare figcaption b { color: #E6E9E4; font-weight: 600; }
+
 /* ---------- durum ---------- */
 .durum-izgara { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.6rem; }
 .durum-kutu {
@@ -207,6 +228,7 @@ footer {
 @media (max-width: 62rem) {
   .kartlar, .durum-izgara, .veri-izgara { grid-template-columns: repeat(2, 1fr); }
   .galeri { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .oyun-izgara { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 @media (max-width: 40rem) {
   body { font-size: 16px; }
@@ -218,7 +240,7 @@ footer {
   .hero-gorsel::after {
     background: linear-gradient(180deg, rgba(7,9,10,.2) 0%, rgba(7,9,10,0) 45%, rgba(7,9,10,1) 100%);
   }
-  .diller, .kartlar, .durum-izgara, .veri-izgara { grid-template-columns: 1fr; }
+  .diller, .kartlar, .durum-izgara, .veri-izgara, .oyun-izgara { grid-template-columns: 1fr; }
   nav { gap: .9rem; font-size: .82rem; }
   .header-ic { padding: .7rem 0; }
 }
