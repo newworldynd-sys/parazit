@@ -3,80 +3,147 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Parazit: Ölü Kabuklar — üçüncü şahıs aksiyon/gizlilik oyunu.">
     <title>Parazit: Ölü Kabuklar</title>
+    <meta name="description" content="Parazit: Ölü Kabuklar — bedensiz bir bilincin düşman bedenlerine sıçradığı üçüncü şahıs aksiyon/gizlilik oyunu. Unreal Engine 5.8.">
+    <meta name="theme-color" content="#07090A">
+    <link rel="icon" href="gorsel/favicon-32.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="gorsel/apple-touch-icon.png">
+    <meta property="og:title" content="Parazit: Ölü Kabuklar">
+    <meta property="og:description" content="Öldüğünde bitmez. Başkasında devam eder.">
+    <meta property="og:image" content="https://yenidunyaworks.com/gorsel/hero.jpg">
+    <meta property="og:url" content="https://yenidunyaworks.com/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+
     <header class="site-header">
-      <a class="wordmark" href="#ana" aria-label="Parazit: Ölü Kabuklar ana sayfa">PARAZİT</a>
+      <a class="marka" href="#ana" aria-label="Parazit: Ölü Kabuklar — ana sayfa">
+        <img src="gorsel/amblem.png" alt="" width="30" height="30">
+        <span>Parazit</span>
+      </a>
       <nav aria-label="Sayfa bölümleri">
         <a href="#oyun">Oyun</a>
-        <a href="#kareler">Kareler</a>
+        <a href="#nasil">Nasıl oynanıyor</a>
+        <a href="#gorseller">Görseller</a>
         <a href="#durum">Durum</a>
+        <a href="gelistirme.html">Geliştirme</a>
         <a href="#iletisim">İletişim</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero section" id="ana" aria-labelledby="oyun-adi">
-        <div class="hero-copy">
-          <h1 id="oyun-adi">Parazit: Ölü Kabuklar</h1>
-          <p class="english-title" lang="en">Parazit: Dead Shells</p>
-          <p class="hero-line">Öldüğünde bitmez. Başkasında devam eder.</p>
-          <p class="hero-line english" lang="en">When you die, it doesn't end. It continues in someone else.</p>
+
+      <section class="hero" id="ana" aria-labelledby="oyun-adi">
+        <div class="hero-gorsel">
+          <img src="gorsel/hero.jpg"
+               alt="Parazit: Ölü Kabuklar — karanlık bir tesis koridorunda çöken bir bedenden mor bir ışık akımı yükseliyor"
+               width="2200" height="710" fetchpriority="high">
         </div>
-        <figure class="hero-image image-frame" data-placeholder="Hero karesi yakında eklenecek">
-          <img src="gorsel/hero.jpg" alt="Parazit: Ölü Kabuklar oyunundan hero karesi" onerror="this.onerror=null; this.hidden=true; this.parentElement.classList.add('is-empty');">
-        </figure>
+        <div class="hero-alt">
+          <h1 id="oyun-adi" class="hero-cizgi">
+            Öldüğünde bitmez.<br><span class="vurgu">Başkasında devam eder.</span>
+          </h1>
+          <p class="hero-en" lang="en">When you die, it doesn't end. It continues in someone else.</p>
+          <div class="rozetler">
+            <span class="rozet one">Üçüncü şahıs aksiyon / gizlilik</span>
+            <span class="rozet">Unreal Engine 5.8</span>
+            <span class="rozet">Türkçe &amp; İngilizce</span>
+            <span class="rozet">Yapım aşamasında</span>
+          </div>
+        </div>
       </section>
 
-      <section class="section intro" id="oyun" aria-labelledby="oyun-baslik">
-        <h2 id="oyun-baslik">Ne bu oyun</h2>
-        <div class="language-columns">
+      <section class="bolum" id="oyun" aria-labelledby="oyun-baslik">
+        <p class="ust-etiket">Ne bu oyun</p>
+        <h2 id="oyun-baslik">Beden bir araç, kimlik bir anahtar</h2>
+        <div class="diller">
           <article>
             <h3>Türkçe</h3>
-            <p>Parazit, bedensiz bir bilincin çatışmanın ortasında düşman bedenlerine sıçradığı üçüncü şahıs bir aksiyon/gizlilik oyunu. Sıçradığın her beden sana kendi kimliğini, erişim yetkisini, silahını ve işlevini devreder — ve onunla birlikte kendi sınırlarını. Oyunun çekirdeği beden değiştirmek değil; <strong>hangi bedenin ne işe yaradığını okuyup onu geçici bir kaynak olarak kullanmaktır.</strong></p>
+            <p>Parazit, bedensiz bir bilincin çatışmanın ortasında düşman bedenlerine sıçradığı üçüncü şahıs bir aksiyon/gizlilik oyunu. Sıçradığın her beden sana kendi kimliğini, erişim yetkisini, silahını ve işlevini devreder — ve onunla birlikte kendi sınırlarını.</p>
+            <p>Oyunun çekirdeği beden değiştirmek değil; <strong>hangi bedenin ne işe yaradığını okuyup onu geçici bir kaynak olarak kullanmaktır.</strong></p>
           </article>
           <article lang="en">
             <h3>English</h3>
-            <p>Parazit is a third-person action/stealth game about a bodiless consciousness that jumps between enemy bodies in the middle of a fight. Every body you take gives you its identity, its access, its weapon and its function — along with its limits. The core loop is not simply changing bodies; it is <strong>reading what each body is good for and spending it as a temporary resource.</strong></p>
+            <p>Parazit is a third-person action/stealth game about a bodiless consciousness that jumps between enemy bodies in the middle of a fight. Every body you take gives you its identity, its access, its weapon and its function — along with its limits.</p>
+            <p>The core loop is not simply changing bodies; it is <strong>reading what each body is good for and spending it as a temporary resource.</strong></p>
           </article>
         </div>
       </section>
 
-      <section class="section gallery" id="kareler" aria-labelledby="kareler-baslik">
-        <div class="section-heading">
-          <div>
-            <h2 id="kareler-baslik">Kareler</h2>
+      <section class="bolum" id="nasil" aria-labelledby="nasil-baslik">
+        <p class="ust-etiket">Nasıl oynanıyor</p>
+        <h2 id="nasil-baslik">Üç kural</h2>
+        <div class="kartlar">
+          <article class="kart">
+            <h3>Sıçra</h3>
+            <p>Menzil içindeki bir bedene geç. Bıraktığın kabuk yere yığılır ve arkanda delil olarak kalır — kimin nerede düştüğü, seni arayanlar için bir iz.</p>
+          </article>
+          <article class="kart">
+            <h3>Oku</h3>
+            <p>Her beden farklı bir kapıyı açar. Teknisyenin yetkisi, nöbetçinin silahı, hemşirenin girebildiği oda. Yanlış bedenle yanlış yerde olmak fark edilmektir.</p>
+          </article>
+          <article class="kart">
+            <h3>Harca</h3>
+            <p>Kabuklar tükenir. Kaldığın beden yıpranır, tanınırsın, aranırsın. Ne zaman bırakacağını bilmek, hangisine geçeceğini bilmek kadar önemlidir.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="bolum" id="gorseller" aria-labelledby="gorsel-baslik">
+        <p class="ust-etiket">Görseller</p>
+        <h2 id="gorsel-baslik">Anahtar görseller</h2>
+        <div class="galeri">
+          <figure class="kare"><img src="gorsel/kare-1.jpg" alt="Koridorda çöken bir bedenden yükselen mor sıçrama akımı, karşısında duran hemşire" loading="lazy" width="900" height="1175"></figure>
+          <figure class="kare"><img src="gorsel/kare-2.jpg" alt="Mor enerjiyle sarmalanmış bir sıçrama anı" loading="lazy" width="900" height="1279"></figure>
+          <figure class="kare"><img src="gorsel/kare-3.jpg" alt="Parazit karakter portresi" loading="lazy" width="900" height="1279"></figure>
+          <figure class="kare"><img src="gorsel/kare-4.jpg" alt="Sıçrama anında boşalan kabuk" loading="lazy" width="900" height="1175"></figure>
+        </div>
+        <p class="not">Bunlar oyunun anahtar görselleri. Oyun içi kareler ve oynanış videosu, demo cilalandıkça buraya eklenecek.</p>
+      </section>
+
+      <section class="bolum" id="durum" aria-labelledby="durum-baslik">
+        <p class="ust-etiket">Durum</p>
+        <h2 id="durum-baslik">Nerede olduğumuz</h2>
+        <dl class="durum-izgara">
+          <div class="durum-kutu">
+            <dt>Motor</dt>
+            <dd>Unreal Engine 5.8<small>Aktif geliştirme</small></dd>
           </div>
-        </div>
-        <div class="shot-grid">
-          <figure class="shot image-frame" data-placeholder="Kare 1"><img src="gorsel/kare-1.jpg" alt="Parazit: Ölü Kabuklar oyunundan oyun içi kare 1" onerror="this.onerror=null; this.hidden=true; this.parentElement.classList.add('is-empty');"></figure>
-          <figure class="shot image-frame" data-placeholder="Kare 2"><img src="gorsel/kare-2.jpg" alt="Parazit: Ölü Kabuklar oyunundan oyun içi kare 2" onerror="this.onerror=null; this.hidden=true; this.parentElement.classList.add('is-empty');"></figure>
-          <figure class="shot image-frame" data-placeholder="Kare 3"><img src="gorsel/kare-3.jpg" alt="Parazit: Ölü Kabuklar oyunundan oyun içi kare 3" onerror="this.onerror=null; this.hidden=true; this.parentElement.classList.add('is-empty');"></figure>
-          <figure class="shot image-frame" data-placeholder="Kare 4"><img src="gorsel/kare-4.jpg" alt="Parazit: Ölü Kabuklar oyunundan oyun içi kare 4" onerror="this.onerror=null; this.hidden=true; this.parentElement.classList.add('is-empty');"></figure>
-        </div>
-      </section>
-
-      <section class="section status" id="durum" aria-labelledby="durum-baslik">
-        <h2 id="durum-baslik">Durum</h2>
-        <dl>
-          <div><dt>Motor</dt><dd>Unreal Engine 5.8'de geliştirilme aşamasında</dd></div>
-          <div><dt>Demo hedefi</dt><dd>Steam Next Fest — 22 Şubat 2027</dd></div>
-          <div><dt>Geliştirme</dt><dd>Tek geliştirici</dd></div>
+          <div class="durum-kutu">
+            <dt>Demo hedefi</dt>
+            <dd>22 Şubat 2027<small>Steam Next Fest</small></dd>
+          </div>
+          <div class="durum-kutu">
+            <dt>Dil</dt>
+            <dd>TR &amp; EN<small>Tam seslendirme, iki dilde</small></dd>
+          </div>
+          <div class="durum-kutu">
+            <dt>Ekip</dt>
+            <dd>Tek geliştirici<small>Bağımsız yapım</small></dd>
+          </div>
         </dl>
+        <p class="not">Nasıl geliştirildiğini, hangi araçlarla doğrulandığını ve şimdiye kadar ne üretildiğini merak ediyorsan: <a href="gelistirme.html">geliştirme sayfası</a>.</p>
       </section>
 
-      <section class="section contact" id="iletisim" aria-labelledby="iletisim-baslik">
-        <h2 id="iletisim-baslik">İletişim</h2>
-        <div class="contact-links">
-          <span>YenidunyaWorks</span>
+      <section class="bolum" id="iletisim" aria-labelledby="iletisim-baslik">
+        <p class="ust-etiket">İletişim</p>
+        <h2 id="iletisim-baslik">Yaz, ulaşırsın</h2>
+        <p>Basın, yayıncılık ve iş birliği için doğrudan yazabilirsin. Demo yaklaştıkça duyurular önce buradan ve X hesabından geçecek.</p>
+        <div class="iletisim-satir">
+          <span class="studyo">YenidunyaWorks</span>
           <a href="mailto:contact@yenidunyaworks.com">contact@yenidunyaworks.com</a>
-          <a href="https://x.com/parazitgame">X / @parazitgame</a>
+          <a href="https://x.com/parazitgame" rel="me noopener">X / @parazitgame</a>
         </div>
       </section>
+
     </main>
+
+    <footer>
+      <span>© 2026 YenidunyaWorks</span>
+      <span>Parazit: Ölü Kabuklar · Parazit: Dead Shells</span>
+    </footer>
 
   </body>
 </html>

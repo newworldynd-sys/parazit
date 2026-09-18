@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Geliştirme — Parazit: Ölü Kabuklar</title>
+    <meta name="description" content="Parazit: Ölü Kabuklar nasıl geliştiriliyor — üretim verileri, doğrulama araçları ve tek geliştiricinin çalışma düzeni.">
+    <meta name="theme-color" content="#07090A">
+    <link rel="icon" href="gorsel/favicon-32.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="gorsel/apple-touch-icon.png">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <header class="site-header">
+      <a class="marka" href="index.html" aria-label="Parazit: Ölü Kabuklar — ana sayfa">
+        <img src="gorsel/amblem.png" alt="" width="30" height="30">
+        <span>Parazit</span>
+      </a>
+      <nav aria-label="Sayfa bölümleri">
+        <a href="index.html#oyun">Oyun</a>
+        <a href="index.html#gorseller">Görseller</a>
+        <a href="#veriler">Veriler</a>
+        <a href="#dogrulama">Doğrulama</a>
+        <a href="index.html#iletisim">İletişim</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <section class="bolum" aria-labelledby="ust-baslik">
+        <a class="geri" href="index.html">← Ana sayfa</a>
+        <p class="ust-etiket">Geliştirme</p>
+        <h2 id="ust-baslik">Tek kişilik bir yapım, ölçülerek yürüyor</h2>
+        <p style="max-width:62ch">Parazit tek geliştirici tarafından yapılıyor. Böyle bir projede en büyük risk kod yazmak değil, <strong>ne yaptığını kaybetmek</strong>: hangi varlığın oyuna gerçekten bağlandığını, hangi düzeltmenin başka bir yeri bozduğunu, geçen ay çözülen bir sorunun geri gelip gelmediğini bilmek.</p>
+        <p style="max-width:62ch">Bu yüzden projenin üretim hattı kadar <em>ölçüm</em> hattı da var. Aşağıdaki sayıların hiçbiri elle tutulmuyor; her biri bir komutun çıktısı ve istendiği an yeniden üretilebiliyor.</p>
+      </section>
+
+      <section class="bolum" id="veriler" aria-labelledby="veri-baslik">
+        <p class="ust-etiket">Üretim verileri</p>
+        <h2 id="veri-baslik">18 Eylül 2026 itibarıyla</h2>
+        <div class="veri-izgara">
+          <div class="veri">
+            <p class="sayi"><em>76</em> gün</p>
+            <p class="ad">Geliştirme süresi</p>
+            <p class="aciklama">İlk commit 5 Temmuz 2026. Gri kutu prototipten Unreal Engine 5.8 yapımına.</p>
+          </div>
+          <div class="veri">
+            <p class="sayi"><em>7</em> bölüm</p>
+            <p class="ad">Oynanabilir harita</p>
+            <p class="aciklama">Laboratuvar, alt kat, güvenlik hattı, bertaraf şaftı, kaçakçı koridoru, atık vadisi, madencilik sahası.</p>
+          </div>
+          <div class="veri">
+            <p class="sayi"><em>1.072</em></p>
+            <p class="ad">Seslendirme dosyası</p>
+            <p class="aciklama">Türkçe 529, İngilizce 543. Diyaloglar iki dilde de kaydedildi.</p>
+          </div>
+          <div class="veri">
+            <p class="sayi"><em>11.500</em>+</p>
+            <p class="ad">Oyun varlığı</p>
+            <p class="aciklama">364 karakter meshi, 2.969 prop, 1.709 animasyon varlığı ve materyaller.</p>
+          </div>
+          <div class="veri">
+            <p class="sayi"><em>143.209</em></p>
+            <p class="ad">Satır oynanış kodu</p>
+            <p class="aciklama">273 dosyada C++. Sıçrama, kabuk çökmesi, yapay zekâ, alarm, asansör, arayüz.</p>
+          </div>
+          <div class="veri">
+            <p class="sayi"><em>2.536</em></p>
+            <p class="ad">Üretim aracı</p>
+            <p class="aciklama">Varlık içe alma, yerleştirme, denetim ve ölçüm için yazılmış kalıcı Python araçları.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bolum" id="dogrulama" aria-labelledby="dog-baslik">
+        <p class="ust-etiket">Doğrulama</p>
+        <h2 id="dog-baslik">"Yapıldı" demeden önce ölçülüyor</h2>
+        <p style="max-width:62ch">Bu projede en pahalı hata sınıfının adı kondu: <strong>üretildi ama bağlanmadı.</strong> Bir varlık üretilir, doğru klasöre yazılır, listede işaretlenir — ve oyun onu hiç okumaz. Hiçbir hata vermez, hiçbir yerde görünmez.</p>
+        <ul class="liste">
+          <li><strong>İş bitimi kapısı</strong> — bir iş "bitti" sayılmadan önce cinsine ait kontrol listesi baştan sona koşulur; otomatik kısmı tek komutla ölçülür ve <em>geçti</em> ya da <em>kaldı</em> basar.</li>
+          <li><strong>Regresyon testleri</strong> — oyunun kuralları oyundan bağımsız sınanır, böylece turlar arasındaki sessiz kaymalar yakalanır.</li>
+          <li><strong>Otomatik oynayıcı</strong> — bir bot haritayı dolaşır, davranışları loglar; sonuçlar sayılarla karşılaştırılır.</li>
+          <li><strong>Performans ölçümü</strong> — kare süresi paket sürümde ölçülür, editörde değil. Hüküm ortalamayla değil en kötü %1 ile verilir.</li>
+          <li><strong>Mühendislik hafızası</strong> — çözülen her tuzak sınıfı, vakası ve kanıtıyla kaydedilir; bugün <strong>1.451</strong> kayıt var. Amaç aynı hatayı iki kez yapmamak.</li>
+        </ul>
+      </section>
+
+      <section class="bolum" aria-labelledby="yol-baslik">
+        <p class="ust-etiket">Sırada ne var</p>
+        <h2 id="yol-baslik">Yol haritası</h2>
+        <ul class="liste">
+          <li><strong>Demo cilası</strong> — yedi bölümün görsel ve işitsel kabulü, oynanış turları, denge ayarı.</li>
+          <li><strong>Steam sayfası</strong> — mağaza sayfası ve tanıtım videosu, Next Fest kaydından önce.</li>
+          <li><strong>Steam Next Fest</strong> — 22 Şubat 2027, herkese açık oynanabilir demo.</li>
+          <li><strong>Tam sürüm</strong> — hedef Haziran 2027.</li>
+        </ul>
+        <p class="not">Tarihler hedeftir, taahhüt değil. Demo hazır olmadan fuara girilmeyecek — fuar oyun başına tek atış.</p>
+      </section>
+
+      <section class="bolum" aria-labelledby="son-baslik">
+        <h2 id="son-baslik">Sorusu olan?</h2>
+        <p>Geliştirme süreci, teknik yaklaşım ya da iş birliği için yazabilirsin.</p>
+        <div class="iletisim-satir">
+          <span class="studyo">YenidunyaWorks</span>
+          <a href="mailto:contact@yenidunyaworks.com">contact@yenidunyaworks.com</a>
+          <a href="https://x.com/parazitgame" rel="me noopener">X / @parazitgame</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <span>© 2026 YenidunyaWorks</span>
+      <span>Veriler 18 Eylül 2026 ölçümü</span>
+    </footer>
+
+  </body>
+</html>
