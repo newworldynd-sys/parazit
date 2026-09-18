@@ -123,6 +123,11 @@ nav a.dil:hover, nav a.dil:focus-visible { border-color: var(--mor); color: var(
 .diller p { max-width: 58ch; }
 .diller strong { color: #E6E9E4; }
 
+.kural-giris {
+  font-size: clamp(1.05rem, 1.9vw, 1.25rem); color: #D5D9D2;
+  max-width: 46ch; margin-top: -.2rem;
+}
+
 /* ---------- mekanik kartları ---------- */
 .kartlar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin-top: 2rem; }
 .kart {
