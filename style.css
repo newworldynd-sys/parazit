@@ -170,7 +170,7 @@ nav a.dil:hover, nav a.dil:focus-visible { border-color: var(--mor); color: var(
 
 .kural-giris {
   font-size: clamp(1.05rem, 1.9vw, 1.25rem); color: #D5D9D2;
-  max-width: 46ch; margin-top: -.2rem;
+  margin-top: -.2rem;
 }
 
 /* ---------- mekanik kartları ---------- */
@@ -206,10 +206,10 @@ nav a.dil:hover, nav a.dil:focus-visible { border-color: var(--mor); color: var(
   border-left: 2px solid var(--mor-dunya); padding-left: .9rem;
 }
 
-.hikaye p { max-width: 64ch; font-size: 1.04rem; }
+.hikaye p { font-size: 1.04rem; }
 .hikaye-acilis {
   font-size: clamp(1.15rem, 2.2vw, 1.45rem); font-weight: 650;
-  color: #F2F4F0; line-height: 1.35; margin-bottom: 1.4rem; max-width: 30ch;
+  color: #F2F4F0; line-height: 1.35; margin-bottom: 1.4rem;
 }
 .hikaye b { color: #E6E9E4; font-weight: 600; }
 .hikaye-kapanis {
