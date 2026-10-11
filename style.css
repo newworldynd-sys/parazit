@@ -361,3 +361,8 @@ footer {
   .bilgi-tablo { grid-template-columns: 1fr; gap: .1rem; }
   .bilgi-tablo dd { margin-bottom: .6rem; }
 }
+.alt-baslik { margin-top: 2.4rem; }
+.poster-izgara { grid-template-columns: repeat(5, minmax(0,1fr)); }
+.poster-kart .onizleme { aspect-ratio: 2 / 3; }
+@media (max-width: 62rem) { .poster-izgara { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+@media (max-width: 40rem) { .poster-izgara { grid-template-columns: repeat(2, minmax(0,1fr)); } }
